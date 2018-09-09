@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class IntentActivity extends Activity {
 
@@ -29,5 +30,31 @@ public class IntentActivity extends Activity {
                 startActivity(i);
             }
         });
+
+        t2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String addressquary="1600 Amphitheatre Parkway,CA";
+
+                Uri.Builder builder=new Uri.Builder();
+                builder.scheme("geo")
+                        .path("0,0")
+                        .query(addressquary);
+                Uri addressUri=builder.build();
+                Intent i=new Intent(Intent.ACTION_VIEW);
+                i.setData(addressUri);
+
+                if(i.resolveActivity(getPackageManager())!=null)
+                {
+                    startActivity(i);
+                }
+                else {
+                    Toast.makeText(IntentActivity.this, "No tool to handle address", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+
     }
 }

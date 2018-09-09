@@ -31,7 +31,7 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
      * An on-click handler that we've defined to make it easy for an Activity to interface with
      * our RecyclerView
      */
-    final private ListItemClickListener mOnClickListener;
+  //  final private ListItemClickListener mOnClickListener;
 
     /*
      * The number of ViewHolders that have been created. Typically, you can figure out how many
@@ -94,11 +94,10 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
      * for the ListItemClickListener.
      *
      * @param numberOfItems Number of items to display in list
-     * @param listener Listener for list item clicks
      */
-    public GreenAdapter(int numberOfItems, ListItemClickListener listener) {
+    public GreenAdapter(int numberOfItems) {
         mNumberItems = numberOfItems;
-        mOnClickListener = listener;
+     //   mOnClickListener = listener;
         viewHolderCount = 0;
     }
 
@@ -209,7 +208,7 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         @Override
         public void onClick(View v) {
             int clickedPosition = getAdapterPosition();
-            mOnClickListener.onListItemClick(clickedPosition);
+            //mOnClickListener.onListItemClick(clickedPosition);
         }
     }
 }
