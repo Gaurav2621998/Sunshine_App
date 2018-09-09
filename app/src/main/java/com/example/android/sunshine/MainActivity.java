@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         mSearchResultsTextView = (TextView) findViewById(R.id.tv_github_search_results_json);
         //makeGithubSearchQuery();
 
-
     }
 
     @Override

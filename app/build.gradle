@@ -22,6 +22,7 @@ android {
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:27.0.1'
 
     // TODO (10) Remove this dependency as we won't be needing it for the project until later
